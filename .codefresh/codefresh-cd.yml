@@ -78,12 +78,12 @@ steps:
     commands:
       - apk add tree
       - tree ./reports -H "." -T "Clair Reports" -L 1 > ./reports/index.html
-  # ArchiveClairReports:
-  #   title: Upload Clair Reports
-  #   image: codefresh/cf-docker-test-reporting
-  #   environment:
-  #     - REPORT_DIR=reports
-  #     - REPORT_INDEX_FILE=index.html
+  ArchiveClairReports:
+    title: Upload Clair Reports
+    image: codefresh/cf-docker-test-reporting
+    environment:
+      - REPORT_DIR=reports
+      - REPORT_INDEX_FILE=index.html
   NotifyGitHubPREnvCreating:
     title: Set Pull Request Environment pending
     image: cloudposse/github-status-updater
