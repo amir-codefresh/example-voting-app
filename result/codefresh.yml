@@ -7,15 +7,6 @@ steps:
     working_directory: ./result/
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
     dockerfile: Dockerfile
-    on_success:
-      metadata:
-        set:
-          - '${{BuildingDockerImage.imageId}}':
-            - CF_QUALITY: true
-            - Performance: true
-            - Latency: ".89" 
-            - Test_Coverage: "83%"
-            - JIRA: "https://codefresh-io.atlassian.net/browse/MKTG-12"
   CheckClair:
     image: dustinvanbuskirk/paclair:demo
     environment:
