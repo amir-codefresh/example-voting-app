@@ -106,7 +106,7 @@ steps:
   DeployPRRelease:
     stage: "pull request"
     title: Create Ephemeral Helm Release for Pull Request
-    image: codefresh/cfstep-helm:2.10.0
+    image: codefresh/cfstep-helm:2.12.0
     working_directory: ./
     environment:
       - CHART_REF=example-voting-app
@@ -189,7 +189,7 @@ steps:
   PushChartToHelmRepository:
     stage: staging
     title: Push Helm Chart to Repository
-    image: codefresh/cfstep-helm:2.10.0
+    image: codefresh/cfstep-helm:2.12.0
     environment:
       - ACTION=push
       - CHART_REF=example-voting-app
@@ -202,7 +202,7 @@ steps:
   UpgradeStagingRelease:
     stage: staging
     title: Upgrading Staging Release
-    image: codefresh/cfstep-helm:2.10.0
+    image: codefresh/cfstep-helm:2.12.0
     working_directory: /
     environment:
       - CHART_REF=example-voting-app
@@ -268,7 +268,7 @@ steps:
   UpgradeProductionRelease:
     stage: production
     title: Upgrading Production Release
-    image: codefresh/cfstep-helm:2.10.0
+    image: codefresh/cfstep-helm:2.12.0
     working_directory: /
     environment:
       - CHART_REF=example-voting-app
