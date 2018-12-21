@@ -192,7 +192,7 @@ steps:
     image: codefresh/cfstep-helm:2.12.0
     environment:
       - ACTION=push
-      - CHART_REF=example-voting-app
+      - CHART_REF=example-voting-app-staging
       - CHART_VERSION=${{CF_RELEASE_TAG}}
     when:
       condition:
@@ -274,7 +274,7 @@ steps:
       - CHART_REF=example-voting-app
       - CHART_REPO_URL=cm://h.cfcr.io/alexandt/default
       - CHART_VERSION=${{CF_RELEASE_TAG}}
-      - RELEASE_NAME=example-voting-app
+      - RELEASE_NAME=example-voting-app-prod
       - KUBE_CONTEXT=amdocs1
       - NAMESPACE=production
       - DEBUG_CHART=true
