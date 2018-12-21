@@ -274,7 +274,7 @@ steps:
       - CHART_REF=example-voting-app
       - CHART_REPO_URL=cm://h.cfcr.io/alexandt/default
       - CHART_VERSION=${{CF_RELEASE_TAG}}
-      - RELEASE_NAME=example-voting-app-prod
+      - RELEASE_NAME=example-voting-app-production
       - KUBE_CONTEXT=amdocs1
       - NAMESPACE=production
       - DEBUG_CHART=true
@@ -296,7 +296,7 @@ steps:
     title: Running DVTS on Production Release
     image: 'codefresh/cli:latest'
     commands:
-      - codefresh run salesdemocf/example-voting-app/dvts -b='${{CF_BRANCH}}' -s='${{CF_REVISION}}' -v KUBE_CONTEXT=amdocs1 -v NAMESPACE=production -v SERVICES='vote result' -v RELEASE_NAME='example-voting-app' -v TEST_IMAGE='example-voting-app/tests:master-${{CF_SHORT_REVISION}}'
+      - codefresh run salesdemocf/example-voting-app/dvts -b='${{CF_BRANCH}}' -s='${{CF_REVISION}}' -v KUBE_CONTEXT=amdocs1 -v NAMESPACE=production -v SERVICES='vote result' -v RELEASE_NAME='example-voting-app-production' -v TEST_IMAGE='example-voting-app/tests:master-${{CF_SHORT_REVISION}}'
     when:
       condition:
         all:
