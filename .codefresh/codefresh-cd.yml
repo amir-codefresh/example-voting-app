@@ -274,7 +274,7 @@ steps:
       - CHART_REF=example-voting-app
       - CHART_REPO_URL=cm://h.cfcr.io/alexandt/default
       - CHART_VERSION=${{CF_RELEASE_TAG}}
-      - RELEASE_NAME=example-voting-app-prod
+      - RELEASE_NAME=example-voting-app-production
       - KUBE_CONTEXT=amdocs1
       - NAMESPACE=production
       - DEBUG_CHART=true
