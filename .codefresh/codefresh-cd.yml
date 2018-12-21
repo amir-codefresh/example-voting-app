@@ -133,7 +133,7 @@ steps:
     stage: "pull request"
     image: 'codefresh/cli:latest'
     commands:
-      - codefresh run alexandt/example-voting-app/dvts -b='${{CF_BRANCH}}' -s='${{CF_REVISION}}' -v KUBE_CONTEXT=amdocs1 -v NAMESPACE=pull-requests -v SERVICES='vote result' -v RELEASE_NAME='${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_PULL_REQUEST_NUMBER}}-${{CF_REPO_NAME}}' -v TEST_IMAGE='example-voting-app/tests:${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
+      - codefresh run salesdemocf/example-voting-app/dvts -b='${{CF_BRANCH}}' -s='${{CF_REVISION}}' -v KUBE_CONTEXT=amdocs1 -v NAMESPACE=pull-requests -v SERVICES='vote result' -v RELEASE_NAME='${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_PULL_REQUEST_NUMBER}}-${{CF_REPO_NAME}}' -v TEST_IMAGE='example-voting-app/tests:${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
     when:
       condition:
         any:
@@ -231,7 +231,7 @@ steps:
     title: Running DVTS on Staging Release
     image: 'codefresh/cli:latest'
     commands:
-      - codefresh run alexandt/example-voting-app/dvts -b='${{CF_BRANCH}}' -s='${{CF_REVISION}}' -v KUBE_CONTEXT=amdocs1 -v NAMESPACE=staging -v SERVICES='vote result' -v RELEASE_NAME='example-voting-app' -v TEST_IMAGE='example-voting-app/tests:master-${{CF_SHORT_REVISION}}'
+      - codefresh run salesdemocf/example-voting-app/dvts -b='${{CF_BRANCH}}' -s='${{CF_REVISION}}' -v KUBE_CONTEXT=amdocs1 -v NAMESPACE=staging -v SERVICES='vote result' -v RELEASE_NAME='example-voting-app' -v TEST_IMAGE='example-voting-app/tests:master-${{CF_SHORT_REVISION}}'
     when:
       condition:
         any:
@@ -296,7 +296,7 @@ steps:
     title: Running DVTS on Production Release
     image: 'codefresh/cli:latest'
     commands:
-      - codefresh run alexandt/example-voting-app/dvts -b='${{CF_BRANCH}}' -s='${{CF_REVISION}}' -v KUBE_CONTEXT=amdocs1 -v NAMESPACE=production -v SERVICES='vote result' -v RELEASE_NAME='example-voting-app' -v TEST_IMAGE='example-voting-app/tests:master-${{CF_SHORT_REVISION}}'
+      - codefresh run salesdemocf/example-voting-app/dvts -b='${{CF_BRANCH}}' -s='${{CF_REVISION}}' -v KUBE_CONTEXT=amdocs1 -v NAMESPACE=production -v SERVICES='vote result' -v RELEASE_NAME='example-voting-app' -v TEST_IMAGE='example-voting-app/tests:master-${{CF_SHORT_REVISION}}'
     when:
       condition:
         all:
