@@ -32,7 +32,7 @@ def browser():
 
 def test_confirm_vote_title(browser):
     browser.get("http://{}:80".format(vote_endpoint_ip))
-    assert "Amazon vs Azure!" in browser.title
+    assert "GitHub vs Gitlab!" in browser.title
 
 
 def test_confirm_vote_choice_form(browser):
@@ -61,7 +61,7 @@ def test_vote_click(browser):
 
 def test_confirm_result_title(browser):
     browser.get("http://{}:80".format(result_endpoint_ip))
-    assert "Amazon vs Azure -- Result" in browser.title
+    assert "GitHub vs Gitlab -- Result" in browser.title
 
 
 def test_confirm_result(browser):
