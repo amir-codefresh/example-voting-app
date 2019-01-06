@@ -64,6 +64,7 @@ steps:
   GenerateTestReporting:
     title: Generate test reporting
     image: codefresh/cf-docker-test-reporting
+    working_directory: '${{CF_VOLUME_PATH}}/'
     environment:
       - ALLURE_DIR=allure-results
       - CF_STORAGE_INTEGRATION=amazon
