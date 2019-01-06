@@ -4,6 +4,5 @@ steps:
     title: Building Docker Image
     type: build
     image_name: example-voting-app/tests
-    working_directory: ./tests/
-    tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
+    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
     dockerfile: Dockerfile
